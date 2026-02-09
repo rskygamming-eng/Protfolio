@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python Automation Portfolio</title>
+  <meta name="description" content="Professional Python automation developer portfolio — Excel automation, safe file tools, web scraping, APIs." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#05070f;
+      --panel:#0b1020;
+      --panel-2:#0e1630;
+      --text:#e6ecff;
+      --muted:#9aa4c7;
+      --accent:#6cf2c2;
+      --accent-2:#5da9ff;
+      --danger:#ff6b6b;
+      --radius:16px;
+      --glow:0 0 40px rgba(108,242,194,.35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%,#0f1b44 0%,transparent 60%),radial-gradient(900px 500px at 90% 10%,#123a5c 0%,transparent 55%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* ===== Layout ===== */
+    .container{max-width:1150px;margin:0 auto;padding:40px 24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-weight:800;letter-spacing:.5px}
+    nav a{margin-left:18px;font-size:14px;color:var(--muted)}
+    nav a:hover{color:var(--text)}
+
+    /* ===== Hero ===== */
+    .hero{margin-top:70px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+
+    .hero h1{font-size:44px;line-height:1.1;margin:0}
+    .hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:18px;margin:20px 0 30px}
+
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{padding:14px 22px;border-radius:14px;font-weight:600;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#02150f;box-shadow:var(--glow)}
+    .btn-secondary{background:transparent;border-color:#2a3b6b;color:var(--text)}
+
+    .hero-card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border-radius:22px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:10px}
+    .stat{background:#0a1430;border-radius:14px;padding:16px;text-align:center}
+    .stat h3{margin:0;font-size:26px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* ===== Sections ===== */
+    section{margin-top:120px}
+    section h2{font-size:34px;margin:0 0 16px}
+    section p.lead{color:var(--muted);max-width:720px}
+
+    /* ===== Services ===== */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:40px}
+    .service{background:linear-gradient(180deg,#0b1436,#0a1025);border-radius:20px;padding:26px;position:relative;overflow:hidden}
+    .service:before{content:"";position:absolute;inset:auto -40% -40% auto;width:220px;height:220px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.12}
+    .service h3{margin:0 0 10px}
+    .service p{color:var(--muted);font-size:15px}
+
+    /* ===== Projects ===== */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+    .project{background:linear-gradient(180deg,#0b1436,#0a1025);border-radius:20px;padding:24px;transition:.4s}
+    .project:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+    .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:#0f2a3d;color:var(--accent);font-size:12px;margin-bottom:10px}
+
+    /* ===== CTA ===== */
+    .cta{margin-top:120px;background:linear-gradient(90deg,#0f2a3d,#142a5c);border-radius:28px;padding:60px;text-align:center}
+    .cta h2{margin-bottom:12px}
+
+    /* ===== Footer ===== */
+    footer{margin-top:120px;padding:30px 0;border-top:1px solid #1d2a55;color:var(--muted);font-size:14px}
+
+    /* ===== Animations ===== */
+    .fade-up{opacity:0;transform:translateY(30px);animation:fadeUp .9s ease forwards}
+    .delay-1{animation-delay:.2s}
+    .delay-2{animation-delay:.4s}
+    .delay-3{animation-delay:.6s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">Python Automation</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h1 class="fade-up">Building <span>safe automation</span><br>that businesses trust</h1>
+        <p class="fade-up delay-1">Professional Python automation developer focused on reliability, safety, and clean delivery. Excel automation, file tools, web scraping, and APIs.</p>
+        <div class="hero-actions fade-up delay-2">
+          <a class="btn btn-primary" href="#contact">Hire Me</a>
+          <a class="btn btn-secondary" href="https://github.com/rskygamming-eng/python-cli-automation-tools/tree/main" target="_blank">View GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-card fade-up delay-3">
+        <h3>Quick Facts</h3>
+        <div class="stats">
+          <div class="stat"><h3>100%</h3><p>Safe scripts</p></div>
+          <div class="stat"><h3>CLI</h3><p>Client ready</p></div>
+          <div class="stat"><h3>Fast</h3><p>Delivery</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 class="fade-up">Services</h2>
+      <p class="lead fade-up delay-1">Focused, production-minded automation — no bloated code, no risky behavior.</p>
+
+      <div class="services">
+        <div class="service fade-up delay-1">
+          <h3>Excel Automation</h3>
+          <p>Clean, validate, and process Excel files safely with configurable logic and CLI tools.</p>
+        </div>
+        <div class="service fade-up delay-2">
+          <h3>File Automation</h3>
+          <p>Collision-safe bulk renaming and file operations with dry-run protection.</p>
+        </div>
+        <div class="service fade-up delay-3">
+          <h3>Web Scraping</h3>
+          <p>Polite, lightweight scrapers with selector control and JSON/CSV output.</p>
+        </div>
+        <div class="service fade-up delay-3">
+          <h3>Python APIs</h3>
+          <p>Minimal Flask APIs designed for real deployment behind Gunicorn.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="fade-up">Selected Projects</h2>
+      <p class="lead fade-up delay-1">Real tools used as production-ready examples.</p>
+
+      <div class="projects">
+        <div class="project fade-up delay-1">
+          <span class="badge">CLI Tool</span>
+          <h3>Excel Cleaner</h3>
+          <p>Safe Excel cleaner with configurable fill methods and robust error handling.</p>
+        </div>
+        <div class="project fade-up delay-2">
+          <span class="badge">Automation</span>
+          <h3>Safe File Renamer</h3>
+          <p>Idempotent renamer with collision protection and dry-run mode.</p>
+        </div>
+        <div class="project fade-up delay-3">
+          <span class="badge">Scraping</span>
+          <h3>Simple Scraper</h3>
+          <p>Respectful scraper with selector-based extraction and export options.</p>
+        </div>
+        <div class="project fade-up delay-3">
+          <span class="badge">API</span>
+          <h3>Flask API</h3>
+          <p>Minimal JSON API with production deployment notes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <h2>Let’s build your automation</h2>
+      <p class="lead">Send your task details and expected timeline. I reply fast.</p>
+      <div style="margin-top:24px">
+        <a class="btn btn-primary" href="mailto:siddharthfm9@gmail.com">Email Me</a>
+        <a class="btn btn-secondary" href="https://www.fiverr.com/yourusername" target="_blank">Fiverr Profile</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Python Automation Portfolio • Built for GitHub Pages
+    </footer>
+  </div>
+
+</body>
+</html>
